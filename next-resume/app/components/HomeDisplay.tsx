@@ -4,7 +4,7 @@ import HomeDisplayButton from "./HomeDisplayButton";
 const HomeDisplay = () => {
     return (
         <div>
-            <div className="bg-gradient-to-br from-black via-gray-900 to-black flex relative overflow-hidden h-149">
+            <div className="bg-gradient-to-br from-black via-gray-900 to-black flex relative overflow-hidden h-188">
                     <div className={
                         "flex flex-col md:flex-row items-center justify-center " +
                         "min-h-100 bg-transparent text-white " +
@@ -23,16 +23,20 @@ const HomeDisplay = () => {
                             " "
                         }
                     >
-                        Optimize. Sell. Grow.
+                        Optimize. Sell.
+                        <br/>
+                        Grow.
                         <br/>
                         Your Investments.
                     </h1>
                     <p
                         className="text-gray-300 text-lg sm:text-xl md:text-1xl"
                     >
-                        <strong className="text-orange-200">Nuvault</strong> is the app designed to help you optimize your
-                        investments—from collectibles to assets.
-                        Stay ahead and grow your portfolio with ease. Make every investment count.
+                        <strong className="text-orange-200">Nuvault</strong> helps you optimize your
+                        Investments- from collectibles to assets.
+                        <br/>
+                        Stay ahead of the market and
+                        maximize your returns
                     </p>
                     <div>
                         <HomeDisplayButton/>

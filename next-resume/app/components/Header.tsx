@@ -25,6 +25,7 @@ const Header = () => {
             <div className="flex items-center h-full justify-center w-full">
                 <NavBar onNavLinkClick={handleNavLinkClick}/>
             </div>
+            <h1>EN</h1>
         </header>
     );
 };

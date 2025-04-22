@@ -5,8 +5,8 @@ const HomeDisplayButton = () => {
     return (
         <button
             className={
-                "bg-gradient-to-r bg-[#d1ad6d] " + // Darker button
-                "text-black font-semibold " +
+                "bg-linear-to-bl from-[#1818ba] to-[#202088] " + // Light blue to dark blue gradient
+                "text-white font-semibold " +
                 "px-8 py-3 sm:px-10 sm:py-4 md:px-10 md:py-3 " +
                 "rounded-full shadow-md hover:shadow-lg " +
                 "transition-all duration-200 " +
@@ -14,7 +14,7 @@ const HomeDisplayButton = () => {
             }
             onClick={() => console.log("clicked")}
         >
-            Manage your investments
+            Get Started
         </button>
     )
 }

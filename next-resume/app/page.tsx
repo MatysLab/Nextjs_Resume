@@ -39,7 +39,6 @@ export default function Home() {
         <div>
             <Header/>
             <HomeDisplay/>
-            <Conveyor words={[collectiblesWords]} speed={60} spacing={2} direction="right"/>
             <BentoGrids/>
         </div>
     </main>
