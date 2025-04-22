@@ -6,11 +6,11 @@ const HomeDisplay = () => {
         <div>
             <div className="bg-gradient-to-br from-black via-gray-900 to-black flex relative overflow-hidden h-188">
                     <div className={
-                        "flex flex-col md:flex-row items-center justify-center " +
+                        "flex flex-col md:flex-row " +
                         "min-h-100 bg-transparent text-white " +
-                        "px-4 md:px-4 lg:px-9 rounded-4xl shadow-2xl " +
-                        "z-10 mt-20 mb-30 " +
-                        "max-w-7xl mx-auto pl-16"
+                        "px-4 md:px-4 lg:px-9 " +
+                        "z-10 mt-55 mb-30 " +
+                        "max-w-7xl fixed left-[calc(50%-800px)]"
                     }
                     >
 
@@ -20,8 +20,7 @@ const HomeDisplay = () => {
                     <h1
                         className={
                             "text-1xl sm:text-2xl md:text-3xl lg:text-4xl " +
-                            "font-semibold text-white " + // White heading
-                            " "
+                            "font-semibold text-white"
                         }
                     >
                         Optimize. Sell.

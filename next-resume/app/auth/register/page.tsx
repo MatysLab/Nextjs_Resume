@@ -14,6 +14,6 @@ export default function RegisterPage() {
             >
                 <RegisterForm />
             </motion.div>
-        </div>
+            </div>
     );
 }
