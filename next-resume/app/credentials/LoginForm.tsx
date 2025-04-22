@@ -4,22 +4,20 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Eye, EyeOff } from 'lucide-react';
 import { FaGoogle } from 'react-icons/fa';
-import { useRouter } from "next/navigation";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
-import { signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-import { auth } from '@/app/lib/firebase/config';
+import { auth, googleProvider } from '@/app/firebase/config';
+import { useRouter } from "next/navigation";
+import { signInWithPopup } from 'firebase/auth';
 
 const LoginForm = () => {
     const [showPassword, setShowPassword] = useState(false);
-
-    const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
-
-    const router = useRouter();
-
     const [formData, setFormData] = useState({
         email: '',
         password: '',
     });
+
+    const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+    const router = useRouter();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -30,25 +28,23 @@ const LoginForm = () => {
     };
 
     const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault(); // Prevent default form submission
+        e.preventDefault();
         try {
             const res = await signInWithEmailAndPassword(formData.email, formData.password);
             if (res?.user) {
-                console.log('Login successful:', res);
-                router.push('/');
+                router.push('/dashboard');
             }
-        } catch (error: any) {
+        } catch (error) {
             console.error('Login error:', error);
-            // You can add error handling here if needed
         }
     };
 
     const handleGoogleLogin = async () => {
         try {
-            const provider = new GoogleAuthProvider();
-            const result = await signInWithPopup(auth, provider);
-            console.log('Google login successful:', result);
-            router.push('/');
+            const result = await signInWithPopup(auth, googleProvider);
+            if (result.user) {
+                router.push('/dashboard');
+            }
         } catch (error) {
             console.error('Google login error:', error);
         }
@@ -133,4 +129,4 @@ const LoginForm = () => {
     );
 };
 
-export default LoginForm;
+export default LoginForm; 

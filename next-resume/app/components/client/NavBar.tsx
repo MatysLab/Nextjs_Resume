@@ -89,26 +89,7 @@ const NavBar: React.FC<NavBarProps> = ({ onNavLinkClick }) => {
                                     <LoginButton />
                                     <RegisterButton />
                                 </>
-                            ) : (
-                                <div className="flex items-center gap-2">
-                                    <div className="relative w-8 h-8 rounded-full overflow-hidden">
-                                        {user.photoURL ? (
-                                            <Image
-                                                src={user.photoURL}
-                                                alt={user.displayName || 'User avatar'}
-                                                fill
-                                                className="object-cover"
-                                            />
-                                        ) : (
-                                            <div className="w-full h-full bg-blue-500 flex items-center justify-center">
-                                                <span className="text-white text-sm font-semibold">
-                                                    {user.displayName?.charAt(0) || user.email?.charAt(0)}
-                                                </span>
-                                            </div>
-                                        )}
-                                    </div>
-                                </div>
-                            )}
+                            ) : (<section/>)}
                         </div>
                     </div>
                 </div>
