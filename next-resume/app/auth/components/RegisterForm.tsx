@@ -27,11 +27,19 @@ const RegisterForm = () => {
     const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
     const router = useRouter();
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value, type, checked } = e.target;
         setFormData({
             ...formData,
             [name]: type === 'checkbox' ? checked : value,
+        });
+    };
+
+    const handleSelectChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData({
+            ...formData,
+            [name]: value,
         });
     };
 
@@ -144,7 +152,7 @@ const RegisterForm = () => {
                     <select
                         name="assetValue"
                         value={formData.assetValue}
-                        onChange={handleChange}
+                        onChange={handleSelectChange}
                         className="bg-gray-800 border border-gray-700 rounded-md px-4 py-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 text-white placeholder:text-gray-400 transition-all duration-300"
                     >
                         <option value="" disabled>What's your total asset value</option>

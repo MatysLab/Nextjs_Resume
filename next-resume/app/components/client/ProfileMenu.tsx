@@ -8,9 +8,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 interface ProfileMenuProps {
     userEmail?: string;
     userDisplayName?: string;
+    userPhoto?: string;
 }
 
-const ProfileMenu: React.FC<ProfileMenuProps> = ({ userEmail, userDisplayName }) => {
+const ProfileMenu: React.FC<ProfileMenuProps> = ({ userEmail, userDisplayName, userPhoto }) => {
     const [isOpen, setIsOpen] = useState(false);
     const router = useRouter();
 
