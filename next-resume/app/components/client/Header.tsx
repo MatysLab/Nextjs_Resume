@@ -40,7 +40,6 @@ const Header = () => {
                 <h1 className="text-gray-300">EN</h1>
                 {user && (
                     <ProfileMenu
-                        userPhoto={user.photoURL || undefined}
                         userEmail={user.email || undefined}
                         userDisplayName={user.displayName || undefined}
                     />
