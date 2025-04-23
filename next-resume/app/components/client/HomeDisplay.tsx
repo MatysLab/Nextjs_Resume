@@ -10,7 +10,7 @@ const HomeDisplay = () => {
                         "min-h-100 bg-transparent text-white " +
                         "px-4 md:px-4 lg:px-9 " +
                         "z-10 mt-55 mb-30 " +
-                        "max-w-7xl fixed left-[calc(50%-800px)]"
+                        "max-w-7xl absolute left-[calc(50%-800px)]"
                     }
                     >
 
@@ -20,7 +20,7 @@ const HomeDisplay = () => {
                     <h1
                         className={
                             "text-1xl sm:text-2xl md:text-3xl lg:text-4xl " +
-                            "font-semibold text-white"
+                            "font-semibold text-white z-0"
                         }
                     >
                         Optimize. Sell.

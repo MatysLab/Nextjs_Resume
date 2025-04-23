@@ -43,7 +43,6 @@ export default function Home() {
       <div className="w-full">
         <HomeDisplay />
         <BentoGrids />
-        <Conveyor words={COLLECTIBLES_WORDS} />
       </div>
     </main>
   );
