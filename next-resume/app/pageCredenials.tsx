@@ -1,7 +1,7 @@
 'use client'
 import React, { Suspense } from 'react';
 import LoginForm from './LoginForm';
-import Logo from './components/client/Logo';
+import Logo from '../components/Logo';
 import { motion as m } from 'framer-motion';
 
 const LoginPage = () => {
@@ -27,7 +27,7 @@ const LoginPage = () => {
                     <LoginForm />
                 </Suspense>
                 <p className="text-sm text-center text-gray-400 mt-8">
-                    Don't have an account?{' '}
+                    Don’t have an account?{' '}
                     <a
                         href="/credentials/register"
                         className="text-blue-400 hover:underline transition-colors duration-200"

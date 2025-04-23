@@ -2,11 +2,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-interface BoutiqueDropdownMenuProps {
-    title: string;
-    onMenuItemClick: (itemName: string) => void;
-}
-
 /**
  * DropdownMenu Component
  *
@@ -16,9 +11,9 @@ interface BoutiqueDropdownMenuProps {
  * @param {string} props.title - The title/label of the dropdown button.
  * @param {function} props.onMenuItemClick - Callback function to handle menu item clicks.
  */
-const BoutiqueDropdownMenu: React.FC<BoutiqueDropdownMenuProps> = ({ title, onMenuItemClick }) => {
+const BoutiqueDropdownMenu = ({ title, onMenuItemClick }) => {
     const [isOpen, setIsOpen] = useState(false);
-    const dropdownRef = useRef<HTMLDivElement>(null);
+    const dropdownRef = useRef(null);
 
     const largeBentoItems = [
         {
@@ -52,8 +47,8 @@ const BoutiqueDropdownMenu: React.FC<BoutiqueDropdownMenuProps> = ({ title, onMe
         setIsOpen(!isOpen);
     };
 
-    const handleClickOutside = (event: MouseEvent) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+    const handleClickOutside = (event) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
             setIsOpen(false);
         }
     };
@@ -65,7 +60,7 @@ const BoutiqueDropdownMenu: React.FC<BoutiqueDropdownMenuProps> = ({ title, onMe
         };
     }, []);
 
-    const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, itemName: string) => {
+    const handleLinkClick = (e, itemName) => {
         e.preventDefault();
         onMenuItemClick(itemName);
         setIsOpen(false);
@@ -115,10 +110,10 @@ const BoutiqueDropdownMenu: React.FC<BoutiqueDropdownMenuProps> = ({ title, onMe
                                         src={item.imageUrl}
                                         alt={item.altText}
                                         className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                                        onError={(e: React.SyntheticEvent<HTMLImageElement>) => {
-                                            const target = e.target as HTMLImageElement;
-                                            target.onerror = null;
-                                            target.src = 'https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src =
+                                                'https://placehold.co/400x300/cccccc/ffffff?text=Image+Not+Found';
                                         }}
                                     />
                                     <div className="absolute inset-0 bg-opacity-30 group-hover:bg-opacity-10 transition-opacity duration-300 flex items-end justify-start p-3">
