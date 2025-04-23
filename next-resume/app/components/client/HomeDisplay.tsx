@@ -4,7 +4,7 @@ import HomeDisplayButton from "./HomeDisplayButton";
 const HomeDisplay = () => {
     return (
         <div>
-            <div className="bg-gradient-to-br from-black via-gray-900 to-black flex relative overflow-hidden h-188">
+            <div className="bg-gradient-to-br from-black via-gray-900 to-black flex relative overflow-hidden h-195">
                     <div className={
                         "flex flex-col md:flex-row " +
                         "min-h-100 bg-transparent text-white " +

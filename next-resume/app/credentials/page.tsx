@@ -29,7 +29,7 @@ const LoginPage = () => {
                 <p className="text-sm text-center text-gray-400 mt-8">
                     Don't have an account?{' '}
                     <a
-                        href="/credentials/register"
+                        href="/auth/register"
                         className="text-blue-400 hover:underline transition-colors duration-200"
                     >
                         Create one
